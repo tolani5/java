@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class CircleCalculation {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter the radius of the circle: ");
+    double r = sc.nextDouble();
+    System.out.println("For a circle with radius: " + r);
+    System.out.println("Area: " + (Math.PI * r * r));
+    System.out.println("Perimeter (Circumference): " + (2 * Math.PI * r));
+    sc.close();
+  }
+}
