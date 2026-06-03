@@ -1,0 +1,17 @@
+import java.awt.*; import java.awt.event.*;
+public class EvenOddAWT extends Frame implements ActionListener {
+  TextField t = new TextField(10);
+  Button b = new Button("Check");
+  Label res = new Label(" ");
+  public EvenOddAWT() {
+    setLayout(new FlowLayout());
+    add(new Label("Enter a Number:")); add(t); add(b); add(res);
+    b.addActionListener(this);
+    setTitle("Even/Odd Checker"); setSize(350, 150); setVisible(true);
+  }
+  public void actionPerformed(ActionEvent e) {
+    try { int n = Integer.parseInt(t.getText()); res.setText(n + (n%2==0 ? " is EVEN" : " is ODD")); }
+    catch (Exception ex) { res.setText("Invalid input!"); }
+  }
+  public static void main(String[] args) { new EvenOddAWT(); }
+}
