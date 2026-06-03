@@ -1,0 +1,23 @@
+import java.util.Scanner;
+interface Area { void calculateArea(Scanner sc); }
+class Rectangle implements Area {
+  public void calculateArea(Scanner sc) {
+    System.out.print("Enter length of Rectangle: "); double l = sc.nextDouble();
+    System.out.print("Enter width of Rectangle: ");  double w = sc.nextDouble();
+    System.out.println("\nArea of Rectangle: " + (l * w));
+  }
+}
+class Circle implements Area {
+  public void calculateArea(Scanner sc) {
+    System.out.print("\nEnter radius of Circle: "); double r = sc.nextDouble();
+    System.out.println("\nArea of Circle: " + (Math.PI * r * r));
+  }
+}
+public class InterfaceDemo {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    new Rectangle().calculateArea(sc);
+    new Circle().calculateArea(sc);
+    sc.close();
+  }
+}
